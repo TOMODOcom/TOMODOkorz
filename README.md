@@ -1,6 +1,7 @@
 korz.js
 ==
 korz.js is CORS utility javascript.
+
 ==
 
 ###use
