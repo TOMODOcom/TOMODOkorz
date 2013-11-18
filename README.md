@@ -8,7 +8,10 @@ it routes through [our](//tomodo.com) servers all request that may be cross orig
 
 ###use
 add:
-```<script src="http://tomodokorz.s3.amazonaws.com/korz-0.5.js"></script>``` and never get cross origin ajax errors again.
+```html
+  <script src="http://tomodokorz.s3.amazonaws.com/korz-0.5.js"></script>
+``` 
+and never get cross origin ajax errors again.
 
 ###more details
 
