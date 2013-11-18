@@ -1,7 +1,7 @@
 korz.js
 ==
 
-never get cross origin ajax errors again\n
+never get cross origin ajax errors again
 
 ###what is does
 it routes through [our](//tomodo.com) servers all request that may be cross origin, so they are return to client with ```Access-Control-Allow-Origin:"*"```.
