@@ -1,8 +1,9 @@
+console.log('I am the conrfa');
 //ifndef
-if(typeof korz != 'undefined'){
+if(typeof korz == 'undefined'){
 
     var korz = {
-        router:"http://korz.tomodo.me/"
+        router:"http://korz.betterinternethome.com/"
     };
     korz.config = function(options){
         for(var opt in options){
