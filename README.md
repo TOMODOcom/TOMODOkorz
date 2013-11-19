@@ -2,7 +2,7 @@ TOMODOkorz - Enables cross-origin requests
 ==
 
 ###What is TOMODOkorz
-TOMODOkorz allows you to make cross-origin requests to any domain. It will removes any CORS restrictions from your site once you add it to your site.
+TOMODOkorz allows you to make cross-origin requests to any domain. It will remove any cross-origin restrictions from your site once you add it to your site.
 
 ###Use
 Add to end of ```<head>```:
