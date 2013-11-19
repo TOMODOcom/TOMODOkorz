@@ -14,7 +14,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './korz.js'
+        './tomodokorz.js'
         ,'./tests/*'
         ,'./jqeury.1.10.2.js'
     ],
