@@ -1,4 +1,3 @@
-console.log('I am the conrfa');
 //ifndef
 if(typeof korz == 'undefined'){
 
