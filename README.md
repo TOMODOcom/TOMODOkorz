@@ -1,19 +1,23 @@
-korz.js
+TOMODOkorz - Enables cross-origin requests
 ==
 
-never get cross origin ajax errors again
+###What is TOMODOkorz
+TOMODOkorz allows you to make cross-origin requests to any domain. It will removes any CORS restrictions from your site once you add to your site.
 
-###what is does
-it routes through [our](//tomodo.com) servers all request that may be cross origin, so they are return to client with ```Access-Control-Allow-Origin:"*"```.
-
-###use
-add:
+###Use
+Add to end of ```<head>```:
 ```html
-  <script src="http://tomodokorz.s3.amazonaws.com/korz-0.5.js"></script>
-``` 
-and never get cross origin ajax errors again.
+  <script src="http://tomodokorz.s3.amazonaws.com/tomodokorz-0.5.js"></script>
+```
 
-###more details
+That's it!
 
-```korz.SuperHttpRequest ``` is basiclly a wrapper around XMLHttpRequest. and
-```korz.OriginalHttpRequest ``` is a varible holding ```XMLHttpRequest```. 
+###How it works
+TOMODOkorz overrides XMLHttpRequest. Normal http same-origin requests are left intact but cross-origin requests are rerouted through a proxy with ```Access-Control-Allow-Origin:"*"```.
+Since every JS http call is built on top of XMLHttpRequest, you can make cross-origin requests regardless of what JS library your'e using(jQuery.ajax for example).
+
+###Contact, Queries and Bugs
+TOMODOkorz is powered by [TOMODO](http://tomodo.com)
+
+Contact us at info@tomodo.com
+
