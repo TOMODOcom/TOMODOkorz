@@ -2,7 +2,7 @@
 if(typeof korz == 'undefined'){
 
     var korz = {
-        router:"http://korz.betterinternethome.com/"
+       router:"http://korz.tomodo.me/"
     };
     korz.config = function(options){
         for(var opt in options){

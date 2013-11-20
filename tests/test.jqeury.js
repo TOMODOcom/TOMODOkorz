@@ -4,7 +4,7 @@ describe('Jquery\n 	', function(){
 			describe('	cross-origin:\n', function(){
                 it('			success', function(){
                     korz.ON();
-                    var url = 'https://facebook.com';
+                    var url = 'http://bitcoincharts.com/';
                     var response = '';
                     var done = false;
                     var jqXHR;
