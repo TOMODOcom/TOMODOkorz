@@ -7,7 +7,7 @@ TOMODOkorz allows you to make cross-origin requests to any domain. It will remov
 ###Use
 Add to end of ```<head>```:
 ```html
-  <script src="http://tomodokorz.s3.amazonaws.com/tomodokorz-0.5.js"></script>
+  <script src="//tomodo-tools.s3.amazonaws.com/tomodo.korz-0.5.js"></script>
 ```
 
 That's it!
