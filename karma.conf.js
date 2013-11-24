@@ -16,7 +16,7 @@ module.exports = function(config) {
     files: [
         './tomodo.korz.js'
         ,'./tests/*'
-        ,'./jqeury.1.10.2.js'
+        ,'./jquery-1.10.2.js'
     ],
 
 
