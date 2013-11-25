@@ -1,9 +1,9 @@
-//ifndef
-if(typeof korz == 'undefined'){
-
-    var korz = {
-       router:"http://korz.tomodo.me/"
+(function(window) {
+    var korz = {};
+    var publicConfig = {
+        router: null
     };
+
     korz.config = function(options){
         for(var opt in options){
             this[opt] = options[opt];
@@ -13,7 +13,7 @@ if(typeof korz == 'undefined'){
 
     korz.OriginalHttpRequest = XMLHttpRequest;
     korz.SuperHttpRequest = function (){
-
+        
         var superHttpRequest = this;
         //  korz.OriginalHttpRequest is just the regular XMLHttpRequest
         var originalHttpRequest = new korz.OriginalHttpRequest();
@@ -25,7 +25,7 @@ if(typeof korz == 'undefined'){
         }
 
         // -------------------------------------------------------------------------
-        // 		overload it
+        //    overload it
         // -------------------------------------------------------------------------
 
         this.open = function(){
@@ -47,7 +47,11 @@ if(typeof korz == 'undefined'){
 
                 // check for cross domain
                 if(superHttpRequest.isCrossDomain()){
-                    superHttpRequest.openArguments[1] = korz.router +  superHttpRequest.url;
+                    if (!publicConfig.router) {
+                        throw 'window.korzConfig.router is not defined! If you do not have your own proxy, you can set it to "http://korz.tomodo.me/" (only use this proxy for insecure requests).';
+                        return;
+                    }
+                    superHttpRequest.openArguments[1] = publicConfig.router +  superHttpRequest.url;
                 }
             }
             //
@@ -137,55 +141,54 @@ if(typeof korz == 'undefined'){
         }
     };
 
-// -------------------------------------------------
-// tests for cross domain request
-// -------------------------------------------------
-    korz.SuperHttpRequest.prototype.isCrossDomain = function(){
-        var notCrossDomain = RegExp('^' + location.origin.replace(/\./g,'\\.') );
-        return !notCrossDomain.test(this.url);
-    };
-// -------------------------------------------------
+    // -------------------------------------------------
+    // tests for cross domain request
+    // -------------------------------------------------
+        korz.SuperHttpRequest.prototype.isCrossDomain = function(){
+            var notCrossDomain = RegExp('^' + location.origin.replace(/\./g,'\\.') );
+            return !notCrossDomain.test(this.url);
+        };
+    // -------------------------------------------------
 
-// -------------------------------------------------
-// test for
-// -------------------------------------------------
-    korz.SuperHttpRequest.prototype.hasProtocol = function(url){
-        var hasProtocol = RegExp('^https?://');
-        return hasProtocol.test(this.url);
-    };
-// -------------------------------------------------
+    // -------------------------------------------------
+    // test for
+    // -------------------------------------------------
+        korz.SuperHttpRequest.prototype.hasProtocol = function(url){
+            var hasProtocol = RegExp('^https?://');
+            return hasProtocol.test(this.url);
+        };
+    // -------------------------------------------------
 
-// -------------------------------------------------
-// test for relative urls
-// -------------------------------------------------
-    korz.SuperHttpRequest.prototype.isRelative = function(url){
-        var notRelative = RegExp('^(https?:)?//');
-        return !notRelative.test(this.url);
-    };
-// -------------------------------------------------
+    // -------------------------------------------------
+    // test for relative urls
+    // -------------------------------------------------
+        korz.SuperHttpRequest.prototype.isRelative = function(url){
+            var notRelative = RegExp('^(https?:)?//');
+            return !notRelative.test(this.url);
+        };
+    // -------------------------------------------------
 
-// -------------------------------------------------
-// turns cross domain sharing ON
-// -------------------------------------------------
-    korz.ON = function (){
-        if( window.XMLHttpRequest != korz.SuperHttpRequest)
-            window.XMLHttpRequest = korz.SuperHttpRequest;
-        return this;
-    }
-// -------------------------------------------------
+    // -------------------------------------------------
+    // turns cross domain sharing ON
+    // -------------------------------------------------
+        korz.ON = function (){
+            if( window.XMLHttpRequest != korz.SuperHttpRequest)
+                window.XMLHttpRequest = korz.SuperHttpRequest;
+            return this;
+        }
+    // -------------------------------------------------
 
-// -------------------------------------------------
-// turns cross domain sharing OFF
-// -------------------------------------------------
-    korz.OFF = function (){
-        if( window.XMLHttpRequest != korz.OriginalHttpRequest )
-            window.XMLHttpRequest = korz.OriginalHttpRequest;
-        return this;
-    }
-// -------------------------------------------------
+    // -------------------------------------------------
+    // turns cross domain sharing OFF
+    // -------------------------------------------------
+        korz.OFF = function (){
+            if( window.XMLHttpRequest != korz.OriginalHttpRequest )
+                window.XMLHttpRequest = korz.OriginalHttpRequest;
+            return this;
+        }
+    // -------------------------------------------------
 
-// defualt is on :)
+    // defualt is on :)
     korz.ON();
-
-}
-//endif
+    window.korzConfig = publicConfig;
+})(window);
