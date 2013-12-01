@@ -18,8 +18,8 @@ Since every JS http call is built on top of XMLHttpRequest, you can make cross-o
 
 ###Config
 
-To use your own router, use ```korz.config({router: 'http://your.router.com'})```. **korz** is turn on by default, to temporary turn it off use ```korz.OFF()```, to turn it back on
-use ```korz.ON```.
+To use your own router, use ```korz.config({router: 'http://your.router.com'})```. **korz** is turned on by default, to temporary turn it off use ```korz.OFF()```, to turn it back on
+use ```korz.ON()```.
 
 
 ###Contact, Queries and Bugs
