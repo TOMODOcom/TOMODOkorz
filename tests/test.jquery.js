@@ -1,4 +1,7 @@
 describe('Jquery\n 	', function(){
+    beforeEach(function(){
+        korz.config({router: "http://korz.betterinternethome.com/"})
+    });
     describe('$.ajax:\n', function(){
 		describe('	GET:\n', function(){
 			describe('	cross-origin:\n', function(){

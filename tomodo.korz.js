@@ -1,3 +1,5 @@
+(function(){
+
 //ifndef
 if(typeof korz == 'undefined'){
 
@@ -187,5 +189,7 @@ if(typeof korz == 'undefined'){
 // defualt is on :)
     korz.ON();
 
+    window.korz = korz;
 }
 //endif
+})();

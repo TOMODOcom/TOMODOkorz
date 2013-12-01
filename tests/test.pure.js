@@ -1,5 +1,8 @@
 describe('synchronous:\n', function(){
-	describe('	GET:\n', function(){
+	beforeEach(function(){
+        korz.config({router: "http://korz.betterinternethome.com/"})
+    });
+    describe('	GET:\n', function(){
 		describe('	cross-origin:\n', function(){
 			it('			success', function(){
 				korz.ON();
