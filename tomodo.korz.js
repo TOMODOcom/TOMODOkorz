@@ -1,3 +1,9 @@
+// ###Config
+// To use your own router, use ```korz.config({router: 'http://your.router.com'})```. **korz** is turned on by default, to temporary turn it off use ```korz.OFF()```, to turn it back on
+// use ```korz.ON()```.
+
+
+
 (function(){
 
 //ifndef
