@@ -16,12 +16,6 @@ That's it!
 TOMODOkorz overrides XMLHttpRequest. Normal http same-origin requests are left intact but cross-origin requests are rerouted through a proxy with ```Access-Control-Allow-Origin:"*"```.
 Since every JS http call is built on top of XMLHttpRequest, you can make cross-origin requests regardless of what JS library your'e using(jQuery.ajax for example).
 
-###Config
-
-To use your own router, use ```korz.config({router: 'http://your.router.com'})```. **korz** is turned on by default, to temporary turn it off use ```korz.OFF()```, to turn it back on
-use ```korz.ON()```.
-
-
 ###Contact, Queries and Bugs
 TOMODOkorz is powered by [TOMODO](http://tomodo.com)
 
