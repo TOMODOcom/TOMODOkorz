@@ -10,7 +10,7 @@
 if(typeof korz == 'undefined'){
 
     var korz = {
-       router:"http://korz.tomodo.me/"
+       router:"[korz server address]"
     };
     korz.config = function(options){
         for(var opt in options){
